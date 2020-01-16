@@ -1,10 +1,15 @@
+<div class="row">
+    <div class="col-md-6 text-left">Detail {{ post.id }}</div>
+    <div class="col-md-6 text-right">{{ dateComment }}</div>
+</div>
+
 <div class="card">
     <div class="card-body">
         <h1 class="card-title text-center">{{ post.title }}</h1>
         <p class="card-text">{{ post.body }}</p>
     </div>
     <hr>
-    <app-comment [post]="post.id"></app-comment>
+    <app-comment (dateEmitter)="onGetDate($event)" [post]="post.id"></app-comment>
     <div class="card-body">
         <a routerLink="/" class="card-link">Regresar a Lista de Post</a>
     </div>

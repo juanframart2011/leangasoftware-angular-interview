@@ -10,7 +10,7 @@ export class PostService {
     private url = 'https://jsonplaceholder.typicode.com';
     constructor( private http:HttpClient ){}
 
-    geCommentPost(id:string){
+    geCommentPost(id:number){
 
         return this.http.get(`${this.url}/posts/${id}/comments/`).pipe(
             map( (resp:any) => {

@@ -1,6 +1,7 @@
-import { Component, OnInit } from '@angular/core';
+import { ElementRef, Component, OnInit, ViewChild } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { PostService } from '../post.service';
+import { CommentComponent } from "../comment/comment.component";
 
 @Component({
   selector: 'app-post-detail',
@@ -9,11 +10,21 @@ import { PostService } from '../post.service';
 })
 export class PostDetailComponent implements OnInit {
 
+    @ViewChild('dateEmitter', {static: false}) dateEmitter:CommentComponent;
+    /*@ViewChild(CommentComponent)
+    private dateEmitter: CommentComponent;*/
+
     description:string = "Post Description example";
+    fecha:string = null;
     post:any;
     title:string = "Post Title example";
+    dateComment:Date = null;
 
-    constructor( private router:ActivatedRoute, private postService:PostService){}
+    constructor(
+                    private elem: ElementRef,
+                    private router:ActivatedRoute,
+                    private postService:PostService
+                ){}
 
     ngOnInit(){
         const id = this.router.snapshot.paramMap.get( 'id' );
@@ -21,5 +32,10 @@ export class PostDetailComponent implements OnInit {
             
             this.post = resp;
         });
+    }
+
+    onGetDate( dateData:any ){
+        
+        this.dateComment = dateData;
     }
 }
