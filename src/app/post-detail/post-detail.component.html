@@ -1,11 +1,10 @@
 <div class="card" style="width: 18rem;">
     <img [src]="image" class="card-img-top" [alt]="title">
     <div class="card-body">
-        <h5 class="card-title">{{ title }}</h5>
-        <p class="card-text">{{ description }}</p>
+        <h5 class="card-title">{{ post.title }}</h5>
+        <p class="card-text">{{ post.body }}</p>
     </div>
     <div class="card-body">
-        <a href="#" class="card-link">Card link</a>
-        <a href="#" class="card-link">Another link</a>
+        <a routerLink="/" class="card-link">Regresar a Lista de Post</a>
     </div>
 </div>
