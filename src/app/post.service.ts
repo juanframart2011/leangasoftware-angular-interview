@@ -10,18 +10,27 @@ export class PostService {
     private url = 'https://jsonplaceholder.typicode.com';
     constructor( private http:HttpClient ){}
 
-    getPost(){
+    geCommentPost(id:string){
 
-        return this.http.get(`${this.url}/posts`).pipe(
+        return this.http.get(`${this.url}/posts/${id}/comments/`).pipe(
             map( (resp:any) => {
                 return resp;
             })
         );
     }
 
-    getDetailPost(id:number){
+    getDetailPost(id:string){
 
         return this.http.get(`${this.url}/posts/${id}`).pipe(
+            map( (resp:any) => {
+                return resp;
+            })
+        );
+    }
+
+    getPost(){
+
+        return this.http.get(`${this.url}/posts`).pipe(
             map( (resp:any) => {
                 return resp;
             })

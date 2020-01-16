@@ -8,7 +8,7 @@ import { PostService } from '../post.service';
 })
 export class PostListComponent implements OnInit {
 
-    posts:Any[];
+    posts:Object;
 
     constructor( private postService: PostService ){
 

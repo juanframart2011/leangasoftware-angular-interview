@@ -1,0 +1,7 @@
+<ul class="list-group list-group-flush" *ngIf="comments.length > 0">
+    <li *ngFor="let comment of comments" class="list-group-item">
+        <h3>{{ comment.name }}</h3>
+        <h5>{{ comment.email }}</h5>
+        <p>{{ comment.body }}</p>
+    </li>
+</ul>

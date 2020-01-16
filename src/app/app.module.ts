@@ -7,13 +7,15 @@ import { AppComponent } from './app.component';
 import { PostListComponent } from './post-list/post-list.component';
 import { PostDetailComponent } from './post-detail/post-detail.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { CommentComponent } from './comment/comment.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     PostListComponent,
     PostDetailComponent,
-    PageNotFoundComponent
+    PageNotFoundComponent,
+    CommentComponent
   ],
   imports: [
     BrowserModule,

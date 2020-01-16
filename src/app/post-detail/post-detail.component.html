@@ -1,9 +1,10 @@
-<div class="card" style="width: 18rem;">
-    <img [src]="image" class="card-img-top" [alt]="title">
+<div class="card">
     <div class="card-body">
-        <h5 class="card-title">{{ post.title }}</h5>
+        <h1 class="card-title text-center">{{ post.title }}</h1>
         <p class="card-text">{{ post.body }}</p>
     </div>
+    <hr>
+    <app-comment [post]="post.id"></app-comment>
     <div class="card-body">
         <a routerLink="/" class="card-link">Regresar a Lista de Post</a>
     </div>
